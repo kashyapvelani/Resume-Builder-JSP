@@ -1,0 +1,335 @@
+package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+
+public final class resume_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html;charset=UTF-8");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+
+    String user = (String) session.getAttribute("user");
+    String name = (String) session.getAttribute("name");
+
+    if (user == null) {
+        response.sendRedirect("index.html");
+    }
+
+
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>Resume Maker</title>\n");
+      out.write("        <script src=\"https://cdn.tailwindcss.com\"></script>\n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
+      out.write("        <nav class=\"bg-white-800\">\n");
+      out.write("            <div class=\"mx-auto max-w-7xl px-2 sm:px-6 lg:px-8\">\n");
+      out.write("                <div class=\"relative flex h-16 items-center justify-between\">\n");
+      out.write("                    <div class=\"absolute inset-y-0 left-0 flex items-center sm:hidden\">\n");
+      out.write("                        <!-- Mobile menu button-->\n");
+      out.write("                        <button type=\"button\" class=\"inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white\" aria-controls=\"mobile-menu\" aria-expanded=\"false\">\n");
+      out.write("                            <span class=\"sr-only\">Open main menu</span>\n");
+      out.write("                            <svg class=\"block h-6 w-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" aria-hidden=\"true\">\n");
+      out.write("                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5\" />\n");
+      out.write("                            </svg>\n");
+      out.write("                            <svg class=\"hidden h-6 w-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" aria-hidden=\"true\">\n");
+      out.write("                            <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />\n");
+      out.write("                            </svg>\n");
+      out.write("                        </button>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"flex flex-1 items-center justify-center sm:items-stretch sm:justify-start\">\n");
+      out.write("                        <div class=\"flex flex-shrink-0 items-center\">\n");
+      out.write("                            <img class=\"h-8 w-auto\" src=\"https://s3.resume.io/uploads/country/logo_default/2/for-light-bg.svg\" alt=\"Your Company\">\n");
+      out.write("                        </div>\n");
+      out.write("                        <div class=\"hidden sm:ml-6 sm:block\">\n");
+      out.write("                            <div class=\"flex space-x-4\">\n");
+      out.write("                                <!-- Current: \"bg-gray-900 text-white\", Default: \"text-gray-300 hover:bg-gray-700 hover:text-white\" -->\n");
+      out.write("                                <a href=\"home.jsp\" class=\"text-gray-500 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium \" >Home</a>\n");
+      out.write("                                <a href=\"resume.jsp\" class=\"bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium\" aria-current=\"page\">Resume</a>\n");
+      out.write("                            </div>\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0\">\n");
+      out.write("                        <a href=\"logout.jsp\" class=\"text-white bg-blue-700 hover:border-2 hover:bg-blue-900 rounded-md px-3 py-2 text-sm font-medium\">Logout</a>\n");
+      out.write("\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("            </div>\n");
+      out.write("        </nav>\n");
+      out.write("\n");
+      out.write("        <div class=\"mx-20 text-gray-900 mb-10\">\n");
+      out.write("            <h1 class=\"font-bold text-2xl mb-10\">Resume Details</h1>\n");
+      out.write("\n");
+      out.write("            <form action=\"resume.jsp\" method=\"get\">\n");
+      out.write("                <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                    <input type=\"email\" name=\"floating_email\" id=\"floating_email\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                    <label for=\"floating_email\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Email address</label>\n");
+      out.write("                </div>\n");
+      out.write("\n");
+      out.write("                <div class=\"grid md:grid-cols-2 md:gap-6\">\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"floating_name\" id=\"floating_name\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"floating_name\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Name</label>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"floating_designation\" id=\"floating_designation\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"floating_designation\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Designation</label>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("                <div class=\"grid md:grid-cols-2 md:gap-6\">\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" pattern=\"[0-9]{3}-[0-9]{3}-[0-9]{4}\" name=\"floating_phone\" id=\"floating_phone\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"floating_phone\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Phone number (123-456-7890)</label>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"floating_location\" id=\"floating_location\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"floating_location\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Location</label>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("\n");
+      out.write("                <!--links-->\n");
+      out.write("                <div class=\"grid md:grid-cols-2 md:gap-6\">\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"linkedinLink\" id=\"linkedinLink\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"linkedinLink\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">LinkedIn Profile Link</label>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"GithubLink\" id=\"GithubLink\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"GithubLink\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Github Profile Link</label>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("\n");
+      out.write("                <!--skills-->\n");
+      out.write("                <div class=\"grid md:grid-cols-2 md:gap-6\">\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"skills\"  class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"skills\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Skills (Java, Python)</label>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"hobbies\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"hobbies\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Hobbies (Reading, Writing)</label>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("                \n");
+      out.write("                 <!--About-->\n");
+      out.write("\n");
+      out.write("                <div class=\"relative flex py-5 items-center\">\n");
+      out.write("                    <div class=\"flex-grow border-t border-gray-400\"></div>\n");
+      out.write("                    <span class=\"flex-shrink mx-4 text-gray-400\">About</span>\n");
+      out.write("                    <div class=\"flex-grow border-t border-gray-400\"></div>\n");
+      out.write("                </div>\n");
+      out.write("\n");
+      out.write("               \n");
+      out.write("                <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                    <textarea name=\"about\" id=\"about\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required ></textarea>\n");
+      out.write("                    <label for=\"about\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">About (MAX 100 words)</label>\n");
+      out.write("                </div>\n");
+      out.write("                \n");
+      out.write("                <!--Project Details-->\n");
+      out.write("\n");
+      out.write("                <div class=\"relative flex py-5 items-center\">\n");
+      out.write("                    <div class=\"flex-grow border-t border-gray-400\"></div>\n");
+      out.write("                    <span class=\"flex-shrink mx-4 text-gray-400\">Project Details</span>\n");
+      out.write("                    <div class=\"flex-grow border-t border-gray-400\"></div>\n");
+      out.write("                </div>\n");
+      out.write("                \n");
+      out.write("                <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                    <input type=\"text\" name=\"project_title\" id=\"project_title\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                    <label for=\"project_title\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Project Title</label>\n");
+      out.write("                </div>\n");
+      out.write("                <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                    <textarea name=\"project_about\" id=\"project_about\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required ></textarea>\n");
+      out.write("                    <label for=\"project_about\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Project Description (MAX 100 words)</label>\n");
+      out.write("                </div>  \n");
+      out.write("                \n");
+      out.write("                <!--Work Experience-->\n");
+      out.write("                \n");
+      out.write("                <div class=\"relative flex py-5 items-center\">\n");
+      out.write("                    <div class=\"flex-grow border-t border-gray-400\"></div>\n");
+      out.write("                    <span class=\"flex-shrink mx-4 text-gray-400\">Work Experience</span>\n");
+      out.write("                    <div class=\"flex-grow border-t border-gray-400\"></div>\n");
+      out.write("                </div>\n");
+      out.write("                \n");
+      out.write("                <div class=\"grid md:grid-cols-2 md:gap-6\">\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"company_name\"  class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"company_name\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Company Name(Ex. Google, Meta)</label>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"w_duration\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"w_duration\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Start and End Date (Ex. 2019-2021)</label>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("                \n");
+      out.write("                <div class=\"grid md:grid-cols-2 md:gap-6\">\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"job_title\"  class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"job_title\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Job Title</label>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"job_location\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"job_location\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Job Location</label>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("                \n");
+      out.write("                <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                    <textarea name=\"job_description\" id=\"job_description\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required ></textarea>\n");
+      out.write("                    <label for=\"job_description\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Job Description (MAX 100 words)</label>\n");
+      out.write("                </div>\n");
+      out.write("                \n");
+      out.write("                <!--Education Details-->\n");
+      out.write("                \n");
+      out.write("                <div class=\"relative flex py-5 items-center\">\n");
+      out.write("                    <div class=\"flex-grow border-t border-gray-400\"></div>\n");
+      out.write("                    <span class=\"flex-shrink mx-4 text-gray-400\">Education Details</span>\n");
+      out.write("                    <div class=\"flex-grow border-t border-gray-400\"></div>\n");
+      out.write("                </div>\n");
+      out.write("                \n");
+      out.write("               <!--SSC Result-->\n");
+      out.write("               \n");
+      out.write("               <div>\n");
+      out.write("                   <p>SSC Details</p>\n");
+      out.write("               </div>\n");
+      out.write("                \n");
+      out.write("                <div class=\"grid md:grid-cols-2 md:gap-6\">\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"ssc_college_name\"  class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"ssc_college_name\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">SSC School Name</label>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"ssc_duration\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"ssc_duration\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Start and End Date (Ex. 2019-2021)</label>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("                \n");
+      out.write("                <div class=\"grid md:grid-cols-2 md:gap-6\">\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"ssc_board\"  class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"ssc_board\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">SSC Board</label>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"ssc_percentage\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"ssc_percentage\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Percentage</label>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("               \n");
+      out.write("               <!--HSC Result-->\n");
+      out.write("               \n");
+      out.write("               <div>\n");
+      out.write("                   <p>HSC Details</p>\n");
+      out.write("               </div>\n");
+      out.write("               \n");
+      out.write("               <div class=\"grid md:grid-cols-2 md:gap-6\">\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"hsc_college_name\"  class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"hsc_college_name\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">HSC College Name</label>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"hsc_duration\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"hsc_duration\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Start and End Date (Ex. 2019-2021)</label>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("                \n");
+      out.write("                <div class=\"grid md:grid-cols-2 md:gap-6\">\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"hsc_board\"  class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"hsc_board\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">HSC Stream</label>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"hsc_percentage\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"hsc_percentage\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Percentage</label>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("               \n");
+      out.write("                <!--Bachelors Degree-->\n");
+      out.write("               \n");
+      out.write("               <div>\n");
+      out.write("                   <p>Bachelor's Degree Details</p>\n");
+      out.write("               </div>        \n");
+      out.write("                \n");
+      out.write("               <div class=\"grid md:grid-cols-2 md:gap-6\">\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"bachelors_college_name\"  class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"bachelors_college_name\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Bachelors College Name</label>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"bachelors_duration\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"bachelors_duration\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Start and End Date (Ex. 2019-2021)</label>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("                \n");
+      out.write("                <div class=\"grid md:grid-cols-2 md:gap-6\">\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"bachelors_degree\"  class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"bachelors_degree\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">Specialization</label>\n");
+      out.write("                    </div>\n");
+      out.write("                    <div class=\"relative z-0 w-full mb-6 group\">\n");
+      out.write("                        <input type=\"text\" name=\"bachelors_cgpa\" class=\"block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer\" placeholder=\" \" required />\n");
+      out.write("                        <label for=\"bachelors_cgpa\" class=\"peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6\">CGPA</label>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("               \n");
+      out.write("                <!--submit-->\n");
+      out.write("                <button type=\"submit\" class=\"text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center \">Submit</button>\n");
+      out.write("            </form>\n");
+      out.write("\n");
+      out.write("        </div>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}
